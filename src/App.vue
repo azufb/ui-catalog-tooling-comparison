@@ -1,20 +1,27 @@
 <template>
   <div>
     <p>aaa</p>
+    <Button label="Click Me" :variant="BUTTON_VARIANTS.SUCCESS" :onClick="() => alert('Button Clicked!')" />
   </div>
 </template>
 
+<script>
+  import Button from '@/components/Button.vue';
+  import { BUTTON_VARIANTS } from '@/const/buttonVariants.js';
+
+  export default {
+    name: 'App',
+    components: {
+      Button
+    },
+    data() {
+      return {
+        BUTTON_VARIANTS
+      };
+    }
+  };
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
