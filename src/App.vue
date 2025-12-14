@@ -1,20 +1,43 @@
 <template>
   <div>
     <p>aaa</p>
+    <Button label="Click Me" :variant="BUTTON_VARIANTS.SUCCESS" :onClick="() => alert('Button Clicked!')" />
+
+    <RadioButton 
+      v-for="radioButtonOption in radioButtonOptions"
+      :label="radioButtonOption.label"
+      :value="radioButtonOption.value"
+      :key="radioButtonOption.value"
+      v-model="selectedOption"
+    />
   </div>
 </template>
 
+<script>
+  import Button from '@/components/Button.vue';
+  import RadioButton from '@/components/RadioButton.vue';
+  import { BUTTON_VARIANTS } from '@/const/buttonVariants.js';
+
+  export default {
+    name: 'App',
+    components: {
+      Button,
+      RadioButton
+    },
+    data() {
+      return {
+        BUTTON_VARIANTS,
+        radioButtonOptions: [
+          { label: 'Option 1', value: 'option1' },
+          { label: 'Option 2', value: 'option2' },
+          { label: 'Option 3', value: 'option3' }
+        ],
+        selectedOption: ""
+      };
+    }
+  };
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>

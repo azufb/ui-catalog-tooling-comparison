@@ -1,44 +1,42 @@
-import { fn } from 'storybook/test';
+import Button from "@/components/Button.vue";
+import { BUTTON_VARIANTS } from "../const/buttonVariants";
 
-import MyButton from './Button.vue';
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
-  title: 'Example/Button',
-  component: MyButton,
-  tags: ['autodocs'],
-  argTypes: {
-    size: { control: { type: 'select' }, options: ['small', 'medium', 'large'] },
-    backgroundColor: { control: 'color' },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
-  args: { onClick: fn() },
+  title: "Example/Button",
+  component: Button,
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary = {
-  args: {
-    primary: true,
-    label: 'Button',
+const Story = (args) => ({
+  components: { Button },
+  setup() {
+    return { args };
   },
-};
+  template: `<Button v-bind="args" />`,
+});
 
-export const Secondary = {
-  args: {
-    label: 'Button',
+export const SuccessButton = Story.bind({});
+SuccessButton.args = {
+  label: "Success Button",
+  variant: BUTTON_VARIANTS.SUCCESS,
+  onClick: () => {
+    console.log("Success button clicked");
   },
 };
 
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
+export const DangerButton = Story.bind({});
+DangerButton.args = {
+  label: "Danger Button",
+  variant: BUTTON_VARIANTS.DANGER,
+  onClick: () => {
+    console.log("Danger button clicked");
   },
 };
 
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
+export const DefaultButton = Story.bind({});
+DefaultButton.args = {
+  label: "Default Button",
+  variant: BUTTON_VARIANTS.DEFAULT,
+  onClick: () => {
+    console.log("Default button clicked");
   },
 };
