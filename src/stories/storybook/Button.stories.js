@@ -1,5 +1,5 @@
 import Button from "@/components/Button.vue";
-import { BUTTON_VARIANTS } from "../const/buttonVariants";
+import { BUTTON_VARIANTS } from "../../const/buttonVariants";
 
 export default {
   title: "Example/Button",
