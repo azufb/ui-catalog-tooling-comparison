@@ -32,8 +32,6 @@ export default {
       { eager: true }
     )
 
-    console.log(modules)
-
     this.components = Object.entries(modules).map(([path, mod]) => ({
       name: path.split('/').pop().replace('.vue', ''),
       component: mod.default,
