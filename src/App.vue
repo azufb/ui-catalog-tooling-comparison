@@ -1,15 +1,6 @@
 <template>
   <div>
-    <p>aaa</p>
-    <Button label="Click Me" :variant="BUTTON_VARIANTS.SUCCESS" :onClick="() => alert('Button Clicked!')" />
-
-    <RadioButton 
-      v-for="radioButtonOption in radioButtonOptions"
-      :label="radioButtonOption.label"
-      :value="radioButtonOption.value"
-      :key="radioButtonOption.value"
-      v-model="selectedOption"
-    />
+    <router-view />
   </div>
 </template>
 

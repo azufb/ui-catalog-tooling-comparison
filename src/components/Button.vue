@@ -12,6 +12,7 @@ export default {
     props: {
         label: {
             type: String,
+            default: 'Default Button',
             required: true
         },
         onClick: {
