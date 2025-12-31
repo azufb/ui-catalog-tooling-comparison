@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>UI Catalog (Vite glob / Vue2)</h1>
+    <h1>UI Catalog (Vite glob)</h1>
 
     <div
       v-for="item in components"
