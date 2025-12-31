@@ -11,6 +11,7 @@
         props: {
             label: {
                 type: String,
+                default: 'Option',
                 required: true
             },
             value: {
